@@ -1,0 +1,352 @@
+/* ==========================================================================
+   Mrunali Patil Portfolio - Ultra-Premium Stylesheet
+   Modern Glassmorphic Dark Theme with Purple-Blue Gradients & Smooth Animations
+   ========================================================================== */
+
+/* -------------------------------------------------------------
+   1. Root, Resets & Smooth Scrolling
+------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: #060813;
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2640;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4875;
+}
+
+/* -------------------------------------------------------------
+   2. Purple-Blue Cosmic Gradient Mesh Background
+------------------------------------------------------------- */
+.cosmic-gradient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #060813;
+}
+
+.cosmic-blob-1 {
+  position: absolute;
+  top: -12%;
+  left: -10%;
+  width: 42rem;
+  height: 42rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(79, 70, 229, 0.08) 50%, transparent 70%);
+  filter: blur(100px);
+  animation: floatOrb 14s infinite alternate ease-in-out;
+}
+
+.cosmic-blob-2 {
+  position: absolute;
+  top: 25%;
+  right: -12%;
+  width: 44rem;
+  height: 44rem;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.18) 0%, rgba(124, 58, 237, 0.06) 50%, transparent 70%);
+  filter: blur(110px);
+  animation: floatOrb 18s infinite alternate-reverse ease-in-out;
+  animation-delay: -3s;
+}
+
+.cosmic-blob-3 {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  width: 40rem;
+  height: 40rem;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+  filter: blur(100px);
+  animation: floatOrb 16s infinite alternate ease-in-out;
+  animation-delay: -6s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, -50px) scale(1.08); }
+  100% { transform: translate(-30px, 30px) scale(0.94); }
+}
+
+/* Background Micro-Grid */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* -------------------------------------------------------------
+   3. Scroll Reveal Animations (IntersectionObserver triggered)
+------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* -------------------------------------------------------------
+   4. Spotlight Cards (Follows mouse cursor)
+------------------------------------------------------------- */
+.spotlight-card {
+  position: relative;
+  background-color: rgba(12, 16, 30, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    650px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(99, 102, 241, 0.12),
+    transparent 42%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(168, 85, 247, 0.4),
+    rgba(99, 102, 241, 0.3),
+    rgba(34, 211, 238, 0.2),
+    transparent 65%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 24px -6px rgba(99, 102, 241, 0.22);
+}
+
+/* -------------------------------------------------------------
+   5. Glowing Buttons & Shimmer Utilities
+------------------------------------------------------------- */
+.glow-btn-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #9333ea 100%);
+  box-shadow: 0 0 22px -4px rgba(99, 102, 241, 0.55), 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glow-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 32px 0px rgba(147, 51, 234, 0.7), 0 8px 24px rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.glow-btn-secondary {
+  background: rgba(18, 24, 43, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(26, 34, 62, 0.9);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.3), 0 6px 18px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+}
+
+.glow-btn-resume {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(49, 46, 129, 0.8) 100%);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  box-shadow: 0 0 16px -3px rgba(99, 102, 241, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-btn-resume:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 26px 0px rgba(168, 85, 247, 0.55);
+}
+
+/* Button Shimmer Sweep Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 80%
+  );
+  transform: rotate(35deg) translateY(-120%);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shimmer:hover::after {
+  transform: rotate(35deg) translateY(120%);
+}
+
+/* -------------------------------------------------------------
+   6. Progress Bars for Technical Skills
+------------------------------------------------------------- */
+.progress-bar-fill {
+  width: 0%;
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active .progress-bar-fill {
+  width: var(--progress-target, 0%);
+}
+
+/* -------------------------------------------------------------
+   7. Glowing Badges & Tags
+------------------------------------------------------------- */
+.badge-glow {
+  box-shadow: 0 0 16px -2px rgba(99, 102, 241, 0.35);
+}
+
+.badge-glow-purple {
+  box-shadow: 0 0 16px -2px rgba(168, 85, 247, 0.35);
+}
+
+.badge-glow-cyan {
+  box-shadow: 0 0 16px -2px rgba(6, 182, 212, 0.35);
+}
+
+/* -------------------------------------------------------------
+   8. Syntax Highlighting in Terminal
+------------------------------------------------------------- */
+.code-keyword { color: #f472b6; font-weight: 600; }
+.code-function { color: #60a5fa; }
+.code-string { color: #34d399; }
+.code-number { color: #fbbf24; }
+.code-comment { color: #64748b; font-style: italic; }
+.code-class { color: #c084fc; font-weight: 600; }
+.code-variable { color: #e2e8f0; }
+
+/* -------------------------------------------------------------
+   9. Social Media Button Hover Effects
+------------------------------------------------------------- */
+.social-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 21, 38, 0.6);
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------
+   10. Print Styles for Clean Resume Printing
+------------------------------------------------------------- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #resume-modal,
+  #resume-modal * {
+    visibility: visible;
+  }
+  #resume-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+  #resume-modal .bg-slate-900,
+  #resume-modal .bg-slate-950 {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+  }
+  #resume-modal h2,
+  #resume-modal h3,
+  #resume-modal h4,
+  #resume-modal strong,
+  #resume-modal span {
+    color: #111827 !important;
+  }
+  #resume-modal p,
+  #resume-modal li,
+  #resume-modal div {
+    color: #374151 !important;
+  }
+  #resume-modal button {
+    display: none !important;
+  }
+}

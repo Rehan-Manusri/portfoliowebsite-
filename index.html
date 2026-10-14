@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mrunali Patil | AI & Data Science Engineering Student</title>
+  <meta name="description" content="Portfolio of Mrunali Patil - Artificial Intelligence & Data Science Engineering Student at R.C. Patel Institute of Technology, Shirpur. Specializing in Python, Java, C, AI applications, and Cybersecurity." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            darkBg: '#060813',
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            cyanAccent: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            },
+            emeraldAccent: {
+              400: '#34d399',
+              500: '#10b981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-[#060813] text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden min-h-screen">
+
+  <!-- Purple-Blue Ambient Cosmic Gradient Background -->
+  <div class="cosmic-gradient-bg">
+    <div class="cosmic-blob-1"></div>
+    <div class="cosmic-blob-2"></div>
+    <div class="cosmic-blob-3"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-30 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_15%,#000_65%,transparent_100%)]"></div>
+  </div>
+
+  <!-- FLOATING NAVIGATION BAR (Glassmorphism & Smooth Scrolling) -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 pt-4 pb-2" id="main-header">
+    <div class="max-w-6xl mx-auto rounded-2xl bg-slate-950/80 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-indigo-950/30 px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl overflow-hidden p-[1px] bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-200 shrink-0">
+          <img src="images/mrunali-patil.jpg" alt="Mrunali Patil" class="w-full h-full object-cover object-top rounded-[11px]" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base sm:text-lg tracking-tight group-hover:text-indigo-400 transition-colors flex items-center gap-1.5">
+            Mrunali Patil
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          </span>
+          <span class="text-[11px] text-slate-400 -mt-1 hidden sm:inline font-mono">AI & Data Science Student</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="#about" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">About</a>
+        <a href="#skills" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">Skills</a>
+        <a href="#projects" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">Projects</a>
+        <a href="#education" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">Education</a>
+        <a href="#achievements" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">Milestones</a>
+        <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 border border-transparent transition-all">Contact</a>
+      </nav>
+
+      <!-- Action Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="openResumeModal()" class="glow-btn-resume btn-shimmer hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]">
+          <i data-lucide="file-text" class="w-4 h-4 text-cyan-300"></i>
+          <span>View Resume</span>
+        </button>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors border border-white/5" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-6xl mx-auto mt-2 rounded-2xl bg-slate-950/95 backdrop-blur-2xl border border-white/10 p-4 space-y-2 shadow-2xl transition-all">
+      <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">About</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">Skills</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">Projects</a>
+      <a href="#education" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">Education</a>
+      <a href="#achievements" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">Milestones</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white">Contact</a>
+      <div class="pt-2">
+        <button onclick="openResumeModal()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold glow-btn-primary text-white shadow-md">
+          <i data-lucide="file-text" class="w-4 h-4"></i>
+          <span>View Resume</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 pb-24 space-y-28 sm:space-y-36">
+
+    <!-- HERO SECTION (High-Impact Split 2-Column Showcase) -->
+    <section id="hero" class="relative pt-2 sm:pt-6 reveal active">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & Glowing CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Live Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-md badge-glow">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Pursuing 2nd Year B.E. • AI & Data Science</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-cyan-300 font-mono text-[11px] sm:text-xs">RCPIT Shirpur</span>
+          </div>
+
+          <!-- Main Hero Headings & Profile Photo -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+            <div class="relative group shrink-0">
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 shadow-xl shadow-indigo-500/25 group-hover:scale-105 transition-all duration-300">
+                <img src="images/mrunali-patil.jpg" alt="Mrunali Patil - AI & Data Science Student" class="w-full h-full object-cover object-top rounded-[14px]" />
+              </div>
+              <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-[#060813] rounded-full shadow-md flex items-center justify-center" title="Active & Open for Internships">
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              </span>
+            </div>
+
+            <div class="space-y-1.5">
+              <h2 class="text-xs sm:text-sm uppercase font-mono tracking-widest text-indigo-400 font-bold flex items-center gap-2">
+                <span class="w-5 h-px bg-indigo-400"></span>
+                Engineering Portfolio
+              </h2>
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Hello, I'm <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-white via-indigo-100 to-cyan-300 bg-clip-text text-transparent">
+                  Mrunali Patil
+                </span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- Animated Dynamic Typewriter Role -->
+          <div class="flex items-center gap-2 text-lg sm:text-2xl font-mono text-slate-300 min-h-[38px] bg-slate-950/70 p-2.5 rounded-xl border border-white/10 w-fit shadow-md">
+            <span class="text-cyan-400 font-bold">&gt;</span>
+            <span id="typewriter" class="text-indigo-300 font-medium"></span>
+            <span class="w-0.5 h-5 sm:h-6 bg-cyan-400 animate-pulse"></span>
+          </div>
+
+          <!-- Narrative Pitch -->
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+            Passionate Artificial Intelligence & Data Science engineering student at <strong class="text-white">R.C. Patel Institute of Technology, Shirpur</strong>. 
+            Focused on building intelligent software solutions in <span class="text-indigo-300 font-mono text-sm bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20">Python</span>, 
+            <span class="text-cyan-300 font-mono text-sm bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">Java</span>, and 
+            <span class="text-purple-300 font-mono text-sm bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20">C</span>, 
+            with a strong enthusiasm for cybersecurity defense and AI-powered applications.
+          </p>
+
+          <!-- Glowing CTAs & Social Links -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#projects" class="glow-btn-primary btn-shimmer px-6 py-3 rounded-xl text-white font-semibold text-sm shadow-xl transition-all flex items-center gap-2 group">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <a href="#contact" class="glow-btn-secondary px-5 py-3 rounded-xl text-slate-200 font-semibold text-sm transition-all flex items-center gap-2 group">
+              <i data-lucide="mail" class="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform"></i>
+              <span>Get in Touch</span>
+            </a>
+
+            <button onclick="openResumeModal()" class="glow-btn-resume btn-shimmer px-4 py-3 rounded-xl text-slate-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center gap-2">
+              <i data-lucide="file-badge" class="w-4 h-4 text-cyan-400"></i>
+              <span>Resume Snapshot</span>
+            </button>
+          </div>
+
+          <!-- Verified Info Pills -->
+          <div class="flex flex-wrap items-center gap-3 pt-3 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-white/5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i> Shirpur, Maharashtra, India
+            </span>
+            <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-white/5">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-cyan-400"></i> R.C. Patel Institute of Tech
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Futuristic Developer Terminal -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Luminous Purple-Blue Glow Behind Terminal -->
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-cyan-500/30 rounded-2xl blur-xl opacity-70"></div>
+
+          <!-- Terminal Container -->
+          <div class="spotlight-card relative rounded-2xl bg-slate-950/90 border border-slate-700/80 shadow-2xl overflow-hidden font-mono text-xs">
+            
+            <!-- Window Title Bar -->
+            <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500 inline-block border border-red-600"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block border border-yellow-600"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500 inline-block border border-green-600"></span>
+                <span class="ml-2 text-slate-400 text-[11px]" id="terminal-filename">Profile.py</span>
+              </div>
+              <span class="text-[10px] text-slate-500 flex items-center gap-1">
+                <i data-lucide="terminal" class="w-3 h-3 text-indigo-400"></i> Python 3.x
+              </span>
+            </div>
+
+            <!-- Terminal Tabs -->
+            <div class="flex items-center border-b border-slate-800/80 bg-slate-950/70 px-2 text-[11px] gap-1 overflow-x-auto">
+              <button class="terminal-tab px-3 py-1.5 border-b-2 border-indigo-500 text-white bg-slate-800/90 rounded-t transition-colors" data-file="profile" data-label="Profile.py">
+                Profile.py
+              </button>
+              <button class="terminal-tab px-3 py-1.5 border-b-2 border-transparent text-slate-400 hover:text-slate-200 rounded-t transition-colors" data-file="skills" data-label="TechStack.json">
+                TechStack.json
+              </button>
+              <button class="terminal-tab px-3 py-1.5 border-b-2 border-transparent text-slate-400 hover:text-slate-200 rounded-t transition-colors" data-file="assistant" data-label="AI_Buddy.py">
+                AI_Buddy.py
+              </button>
+            </div>
+
+            <!-- Code Area -->
+            <div class="p-5 overflow-x-auto text-slate-300 leading-relaxed min-h-[310px] text-[11.5px]" id="terminal-code-display">
+<span class="code-comment"># Engineer Identity & Academic Profile</span>
+<span class="code-keyword">class</span> <span class="code-class">MrunaliPatil</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-variable">self</span>):
+        <span class="code-variable">self</span>.name = <span class="code-string">"Mrunali Patil"</span>
+        <span class="code-variable">self</span>.role = <span class="code-string">"AI & Data Science Engineering Student"</span>
+        <span class="code-variable">self</span>.institute = <span class="code-string">"R.C. Patel Institute of Technology, Shirpur"</span>
+        <span class="code-variable">self</span>.academic_status = <span class="code-string">"2nd Year (FY CGPA: 6.50)"</span>
+        <span class="code-variable">self</span>.secondary_score = <span class="code-string">"10th Grade: 92.80% Distinction"</span>
+        <span class="code-variable">self</span>.interests = [<span class="code-string">"Artificial Intelligence"</span>, <span class="code-string">"Cybersecurity"</span>, <span class="code-string">"Software Logic"</span>]
+        <span class="code-variable">self</span>.open_for_internships = <span class="code-keyword">True</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">get_mission</span>(<span class="code-variable">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Building practical AI assistants & secure software tools."</span>
+            </div>
+
+            <!-- Terminal Footer Status Bar -->
+            <div class="px-4 py-2 bg-slate-900/80 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Ready for Collaborations
+              </span>
+              <span>UTF-8 • UNIX</span>
+            </div>
+          </div>
+
+          <!-- Floating Badges Around Terminal -->
+          <div class="absolute -bottom-4 -left-4 p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-xl flex items-center gap-2.5 text-xs">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="font-bold text-white">FY CGPA: 6.50</p>
+              <p class="text-[10px] text-slate-400">First Year Completed</p>
+            </div>
+          </div>
+
+          <div class="absolute -top-4 -right-4 p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-xl flex items-center gap-2.5 text-xs hidden sm:flex">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+              <i data-lucide="bot" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="font-bold text-white">AI Study Buddy</p>
+              <p class="text-[10px] text-slate-400">Active Concept</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Ribbon (Spotlight Cards with Hover Effects) -->
+      <div class="mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="spotlight-card p-5 flex items-center gap-4 group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight">6.50</div>
+            <div class="text-xs text-slate-400 mt-0.5">FY Engineering CGPA</div>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-5 flex items-center gap-4 group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono tracking-tight">92.80%</div>
+            <div class="text-xs text-slate-400 mt-0.5">10th Grade Score</div>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-5 flex items-center gap-4 group">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
+            <i data-lucide="code" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-purple-400 font-mono tracking-tight">3+</div>
+            <div class="text-xs text-slate-400 mt-0.5">Languages (C, Python, Java)</div>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-5 flex items-center gap-4 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">AI & Cyber</div>
+            <div class="text-xs text-slate-400 mt-0.5">Primary Focus Areas</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION (Clean & Professional Bento Grid Layout) -->
+    <section id="about" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+            <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Profile & Foundation</h2>
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">About Mrunali Patil</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          A disciplined engineering mindset dedicated to artificial intelligence, robust programming, and practical problem-solving.
+        </p>
+      </div>
+
+      <!-- Bento Grid with Hover Effects -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        
+        <!-- Bento 1: Core Narrative (Large) -->
+        <div class="spotlight-card md:col-span-8 p-7 sm:p-9 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-indigo-400 text-xs font-mono font-semibold uppercase tracking-wider">
+              <i data-lucide="user-check" class="w-4 h-4"></i> Engineering Philosophy
+            </div>
+            
+            <h4 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+              Bridging foundational computer science logic with intelligent, real-world systems.
+            </h4>
+            
+            <div class="space-y-3.5 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p>
+                I am a motivated and hardworking <strong class="text-white">Artificial Intelligence & Data Science</strong> engineering student at R.C. Patel Institute of Technology, Shirpur. Having successfully completed my foundational First Year with a <span class="text-indigo-300 font-mono font-semibold">6.50 CGPA</span>, I am currently exploring second-year core engineering disciplines.
+              </p>
+              <p>
+                My passion lies in hands-on programming and structural problem-solving. I have established a solid foundation across <span class="text-white font-medium">C</span>, <span class="text-white font-medium">Python</span>, and <span class="text-white font-medium">Java</span>. I am fascinated by the intersection of AI-based applications—such as assistive learning tools—and modern cybersecurity paradigms that safeguard digital infrastructure.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-3">
+            <span class="px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono">
+              #HandsOnProblemSolving
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono">
+              #AIApplications
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono">
+              #CybersecurityCuriosity
+            </span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Academic Institution & Portrait Card -->
+        <div class="spotlight-card md:col-span-4 p-6 sm:p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 shrink-0 shadow-lg shadow-indigo-500/20 group">
+                <img src="images/mrunali-patil.jpg" alt="Mrunali Patil" class="w-full h-full object-cover object-top rounded-[14px] group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div>
+                <span class="text-[11px] text-cyan-400 font-mono uppercase font-semibold">Student Profile</span>
+                <h4 class="text-base sm:text-lg font-bold text-white">Mrunali Patil</h4>
+                <p class="text-xs text-slate-400 mt-0.5">RCPIT, Shirpur</p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Degree:</span>
+                <span class="text-white font-medium">B.E. AI & Data Science</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Status:</span>
+                <span class="text-emerald-400 font-medium">Currently in 2nd Year</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">FY Result:</span>
+                <span class="text-indigo-300 font-mono font-bold">6.50 CGPA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-slate-400 font-mono pt-2 border-t border-slate-800/80">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>R.C. Patel Institute of Tech • Shirpur</span>
+          </div>
+        </div>
+
+        <!-- Bento 3: AI-Based Applications Focus -->
+        <div class="spotlight-card md:col-span-4 p-6 space-y-4 group">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">AI-Based Applications</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Investigating how AI concepts can be leveraged to build intelligent peer study assistants, automated workflows, and supportive student software tools.
+          </p>
+          <div class="text-[11px] font-mono text-indigo-400 flex items-center gap-1">
+            <span>Project: AI Study Buddy</span>
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Bento 4: Cybersecurity Discipline -->
+        <div class="spotlight-card md:col-span-4 p-6 space-y-4 group">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-purple-300 transition-colors">Cybersecurity Defense</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Understanding fundamental cybersecurity protocols, threat awareness, secure code conventions, and basic network architecture concepts.
+          </p>
+          <div class="text-[11px] font-mono text-purple-400 flex items-center gap-1">
+            <span>Focus: Secure Systems & Networks</span>
+            <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Bento 5: High Secondary Performance Card -->
+        <div class="spotlight-card md:col-span-4 p-6 space-y-4 group">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">Academic Excellence</h4>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Demonstrated academic dedication with <strong class="text-white">92.80%</strong> in 10th grade from R.C. Patel Junior College, building a solid analytical and mathematical base.
+          </p>
+          <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
+            <span>Distinction Foundation</span>
+            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX SECTION (Animated Progress Bars & Cards) -->
+    <section id="skills" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+            <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Competencies</h2>
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">Technical Skills & Foundation</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-sm">
+          Hands-on programming knowledge and core theoretical disciplines honed through coursework and structured problem solving.
+        </p>
+      </div>
+
+      <!-- Skills Matrix 4-Column Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Skill 1: Programming Languages (Animated Progress Bars) -->
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            
+            <h4 class="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">Languages</h4>
+            <p class="text-xs text-slate-400 mt-1 mb-5">Primary programming languages for data, logic, and systems.</p>
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                  <span class="text-slate-200 font-medium">Python</span>
+                  <span class="text-indigo-400 font-semibold">85%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                  <div class="progress-bar-fill bg-gradient-to-r from-indigo-500 to-cyan-400 h-full rounded-full" data-target="85%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                  <span class="text-slate-200 font-medium">C Language</span>
+                  <span class="text-indigo-400 font-semibold">82%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                  <div class="progress-bar-fill bg-gradient-to-r from-indigo-500 to-cyan-400 h-full rounded-full" data-target="82%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                  <span class="text-slate-200 font-medium">Java</span>
+                  <span class="text-indigo-400 font-semibold">80%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                  <div class="progress-bar-fill bg-gradient-to-r from-indigo-500 to-cyan-400 h-full rounded-full" data-target="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-slate-400 font-mono">
+            3 Active Languages
+          </div>
+        </div>
+
+        <!-- Skill 2: Artificial Intelligence & Data -->
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
+              <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+            </div>
+            
+            <h4 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">AI & Data Science</h4>
+            <p class="text-xs text-slate-400 mt-1 mb-5">Intelligent systems, data structures, and assistive models.</p>
+            
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>Basic AI Concepts & Taxonomies</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>AI-Based Application Architecture</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>Study Assistant Logic Modeling</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>Algorithmic Data Parsing</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-cyan-400 font-mono">
+            Specialization Track
+          </div>
+        </div>
+
+        <!-- Skill 3: Cybersecurity Fundamentals -->
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            
+            <h4 class="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">Cybersecurity</h4>
+            <p class="text-xs text-slate-400 mt-1 mb-5">System safety concepts and defensive programming.</p>
+            
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 shrink-0"></i>
+                <span>Cybersecurity Principles & Models</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 shrink-0"></i>
+                <span>Threat Awareness & Risk Mitigation</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 shrink-0"></i>
+                <span>Network & Communication Basics</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 shrink-0"></i>
+                <span>Defensive Code Habits</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-purple-400 font-mono">
+            Security & Defense
+          </div>
+        </div>
+
+        <!-- Skill 4: Problem Solving & Engineering -->
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+              <i data-lucide="terminal" class="w-6 h-6"></i>
+            </div>
+            
+            <h4 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">Problem Solving</h4>
+            <p class="text-xs text-slate-400 mt-1 mb-5">Algorithmic thinking and structured application design.</p>
+            
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Conditions, Loops & Arrays</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Object-Oriented Programming (OOP)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Modular Functions & Recursion</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Logical Analysis & Debugging</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-emerald-400 font-mono">
+            Core Foundation
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Skill Badges Cloud with Hover Glow -->
+      <div class="spotlight-card p-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs sm:text-sm">
+        <span class="text-slate-400 font-mono text-xs uppercase mr-2 flex items-center gap-1.5">
+          <i data-lucide="tags" class="w-3.5 h-3.5 text-indigo-400"></i> Technical Tags:
+        </span>
+        <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono hover:bg-indigo-500/20 transition-colors cursor-default">Python 3.x</span>
+        <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono hover:bg-indigo-500/20 transition-colors cursor-default">Java OOP</span>
+        <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono hover:bg-indigo-500/20 transition-colors cursor-default">C Language</span>
+        <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 transition-colors cursor-default">Artificial Intelligence</span>
+        <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 transition-colors cursor-default">Data Science</span>
+        <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 hover:bg-purple-500/20 transition-colors cursor-default">Cybersecurity</span>
+        <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 transition-colors cursor-default">Algorithmic Logic</span>
+        <span class="px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 border border-white/5 hover:border-white/20 transition-colors cursor-default">Inheritance & Polymorphism</span>
+        <span class="px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 border border-white/5 hover:border-white/20 transition-colors cursor-default">Memory & Pointers</span>
+        <span class="px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 border border-white/5 hover:border-white/20 transition-colors cursor-default">Study Assistant Concept</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS & PRACTICAL LEARNING SECTION (Professional Developer Showcase) -->
+    <section id="projects" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+            <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Project Portfolio</h2>
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">Projects & Practical Learning</h3>
+        </div>
+
+        <!-- Filter Buttons with Glow -->
+        <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-950 border border-slate-800 text-xs self-start sm:self-auto shadow-inner" id="project-filters">
+          <button class="filter-btn active px-3.5 py-1.5 rounded-lg font-medium text-white bg-indigo-600 transition-all shadow-sm" data-filter="all">All</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all" data-filter="ai">AI & Concept</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all" data-filter="programming">Languages</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-container">
+        
+        <!-- FEATURED FLAGSHIP CARD: AI Study Buddy (With Live Interactive Simulator!) -->
+        <div class="project-item md:col-span-2 spotlight-card p-6 sm:p-9 border-indigo-500/40 relative overflow-hidden group" data-category="ai">
+          
+          <!-- Subtle Glow Overlay -->
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-500/25 transition-all"></div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <div class="flex items-center gap-2.5">
+              <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-semibold flex items-center gap-1.5 badge-glow">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i> Featured Project Concept
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> In Active Conceptual Development
+              </span>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">Domain: Artificial Intelligence & Education</span>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-6 space-y-4">
+              <h4 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-indigo-300 transition-colors flex items-center gap-3">
+                <span>AI Study Buddy</span>
+                <i data-lucide="bot" class="w-7 h-7 text-cyan-400"></i>
+              </h4>
+              
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                An intelligent study assistant concept engineered to empower students with personalized learning support and active study aid. Designed to deconstruct complex technical topics, assist with conceptual queries, and provide structured revisions for peer engineering learners.
+              </p>
+
+              <!-- Feature Highlights -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div class="flex items-center gap-2.5 text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <i data-lucide="lightbulb" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                  <span>Intelligent Query Simplifier</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <i data-lucide="book-open" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                  <span>Curriculum & Topic Breakdown</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-900 text-xs font-mono text-indigo-300 border border-slate-700">Python 3.x</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-900 text-xs font-mono text-cyan-300 border border-slate-700">AI Prompt Logic</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-900 text-xs font-mono text-purple-300 border border-slate-700">NLP Architecture</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-900 text-xs font-mono text-emerald-300 border border-slate-700">Concept Prototype</span>
+              </div>
+            </div>
+
+            <!-- Right Column: LIVE INTERACTIVE AI SIMULATION WIDGET -->
+            <div class="lg:col-span-6 rounded-2xl bg-slate-950/90 border border-indigo-500/30 p-5 space-y-4 shadow-xl">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Live Interactive Concept Demo
+                </span>
+                <span id="ai-sim-status" class="text-[11px] text-slate-400 flex items-center gap-1 font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Ready
+                </span>
+              </div>
+
+              <!-- Simulated Prompt Selector -->
+              <div class="space-y-1.5">
+                <label class="text-[11px] font-mono text-slate-400 uppercase">Click a student query to test:</label>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <button class="ai-sim-prompt text-left px-2.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/40 text-slate-300 hover:text-white transition-all truncate" data-prompt="recursion">
+                    💡 Explain Recursion
+                  </button>
+                  <button class="ai-sim-prompt text-left px-2.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/40 text-slate-300 hover:text-white transition-all truncate" data-prompt="oop">
+                    ☕ Java Encapsulation
+                  </button>
+                  <button class="ai-sim-prompt text-left px-2.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/40 text-slate-300 hover:text-white transition-all truncate" data-prompt="cyber">
+                    🔒 Cybersecurity Basics
+                  </button>
+                  <button class="ai-sim-prompt text-left px-2.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/40 text-slate-300 hover:text-white transition-all truncate" data-prompt="c_arrays">
+                    ⚡ C Memory & Arrays
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question Box -->
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 text-xs">
+                <div class="text-[10px] font-mono text-cyan-400 uppercase mb-1 flex items-center gap-1">
+                  <i data-lucide="message-square" class="w-3 h-3"></i> Student Question:
+                </div>
+                <div id="ai-sim-question" class="text-slate-200 italic font-medium">
+                  "Can you explain Recursion with an intuitive analogy?"
+                </div>
+              </div>
+
+              <!-- Response Box with Animated Streaming -->
+              <div class="p-3.5 rounded-xl bg-indigo-950/20 border border-indigo-500/20 text-xs space-y-1.5">
+                <div class="text-[10px] font-mono text-indigo-400 uppercase flex items-center gap-1">
+                  <i data-lucide="bot" class="w-3 h-3"></i> AI Study Buddy Answer:
+                </div>
+                <div id="ai-sim-answer" class="text-slate-300 leading-relaxed min-h-[64px]">
+                  Think of recursion like opening a series of Russian nesting dolls (Matryoshka). Each function call unpacks a smaller doll with the same logic, until you reach the smallest doll that cannot be opened (the Base Case). Once reached, the dolls are assembled back together in reverse order!
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 2: C Programming Practice -->
+        <div class="project-item spotlight-card p-6 sm:p-7 flex flex-col justify-between group" data-category="programming">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:scale-110 transition-transform">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
+                Procedural Systems
+              </span>
+            </div>
+            
+            <h4 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+              C Programming Practice & Problem Solving
+            </h4>
+            
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Extensive problem-solving laboratory focusing on procedural programming fundamentals. Implemented algorithms involving conditions, loops, multidimensional arrays, functions, and memory concepts to establish robust programming foundations.
+            </p>
+
+            <ul class="mt-4 space-y-2 text-xs text-slate-400">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Array manipulations & mathematical series algorithms</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Modular function hierarchies & recursion patterns</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Decision structures & control flow efficiency</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-indigo-300 border border-slate-800">C Language</span>
+            <span class="text-xs text-slate-400 font-mono">100% Practical Complete</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Python Programming Practice -->
+        <div class="project-item spotlight-card p-6 sm:p-7 flex flex-col justify-between group" data-category="programming">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                <i data-lucide="file-code-2" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
+                Data Science Base
+              </span>
+            </div>
+            
+            <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+              Python Programming Practice & Logic
+            </h4>
+            
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Hands-on Python exploration designed as the foundation for Data Science. Practiced clean input/output pipelines, loops, lists, dictionaries, string manipulations, and automated script logic for mathematical tasks.
+            </p>
+
+            <ul class="mt-4 space-y-2 text-xs text-slate-400">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Data parsing, I/O handling & string operations</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Iterative solutions, lists & dictionary structures</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Algorithmic logic and script automation</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-300 border border-slate-800">Python 3.x</span>
+            <span class="text-xs text-slate-400 font-mono">Foundational Suite</span>
+          </div>
+        </div>
+
+        <!-- Project 4: Java Programming Practice -->
+        <div class="project-item md:col-span-2 spotlight-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group" data-category="programming">
+          <div class="space-y-3 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                Java Programming Practice & Object-Oriented Principles
+              </h4>
+            </div>
+            
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Focused implementation of core Object-Oriented Programming (OOP) paradigms in Java. Built class architectures modeling real-world entities, encapsulation, inheritance hierarchies, and clean method overriding for robust software design.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-purple-300 border border-slate-800">Encapsulation</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-purple-300 border border-slate-800">Inheritance</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-purple-300 border border-slate-800">Polymorphism</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-purple-300 border border-slate-800">Class Hierarchies</span>
+            </div>
+          </div>
+
+          <div class="sm:text-right shrink-0">
+            <span class="px-3.5 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-xs">
+              Java Standard Edition
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & TIMELINE SECTION (Illuminated Journey) -->
+    <section id="education" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+        <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Academic Pathway</h2>
+      </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Education Journey</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Structured academic track and demonstrated performance.</p>
+        </div>
+      </div>
+
+      <!-- Timeline with Pulsing Glowing Nodes -->
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-10">
+        
+        <!-- Timeline Item 1: B.E. Degree -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-2 w-5 h-5 rounded-full bg-slate-950 border-4 border-indigo-500 group-hover:border-cyan-400 transition-colors shadow-md"></div>
+
+          <div class="spotlight-card p-7 space-y-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-mono text-xs font-medium">
+                2023 - Present (Currently in 2nd Year)
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 font-mono text-xs font-semibold border border-emerald-500/20">
+                FY CGPA: 6.50
+              </span>
+            </div>
+
+            <h4 class="text-xl sm:text-2xl font-bold text-white">
+              Bachelor of Engineering – Artificial Intelligence & Data Science
+            </h4>
+            
+            <div class="flex items-center gap-2 text-slate-300 text-sm font-medium">
+              <i data-lucide="building-2" class="w-4 h-4 text-indigo-400"></i>
+              <span>R.C. Patel Institute of Technology, Shirpur</span>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1">
+              Successfully completed the rigorous first-year curriculum with an overall 6.50 CGPA. Actively studying core second-year coursework including advanced data structures, algorithms, AI applications, object-oriented systems, and cybersecurity principles.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs text-slate-300 border border-slate-800">Artificial Intelligence</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs text-slate-300 border border-slate-800">Data Science</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs text-slate-300 border border-slate-800">Engineering Mathematics</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-xs text-slate-300 border border-slate-800">C & Python Programming</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Junior College / 10th -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-2 w-5 h-5 rounded-full bg-slate-950 border-4 border-cyan-500 group-hover:border-indigo-400 transition-colors shadow-md"></div>
+
+          <div class="spotlight-card p-7 space-y-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-mono text-xs font-medium">
+                Secondary School Certificate (10th)
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold border border-cyan-500/20">
+                10th Grade: 92.80% Distinction
+              </span>
+            </div>
+
+            <h4 class="text-xl sm:text-2xl font-bold text-white">
+              Secondary Education (10th Standard)
+            </h4>
+            
+            <div class="flex items-center gap-2 text-slate-300 text-sm font-medium">
+              <i data-lucide="building-2" class="w-4 h-4 text-cyan-400"></i>
+              <span>R.C. Patel Junior College, Shirpur</span>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1">
+              Graduated with a standout 92.80% distinction, establishing early academic rigor in mathematical problem solving, analytical reasoning, and scientific methodology.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & ACTIVITIES SECTION -->
+    <section id="achievements" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+        <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Accomplishments</h2>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Milestones & Activities</h3>
+        <p class="text-xs sm:text-sm text-slate-400">Key achievements and collaborative collegiate extracurricular activities.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-3.5 border border-indigo-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">First Year Completion</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Successfully cleared FY Engineering with an overall 6.50 CGPA at RCPIT.
+            </p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono text-indigo-300 font-semibold">Academic Milestone</span>
+        </div>
+
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3.5 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">Skill Acceleration</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Actively developing daily problem-solving proficiency across C, Python, Java, and Cybersecurity.
+            </p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono text-cyan-300 font-semibold">Continuous Practice</span>
+        </div>
+
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3.5 border border-purple-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="lightbulb" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-purple-300 transition-colors">AI Study Buddy</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Designing an AI-based study assistant prototype engineered to support peer learners with conceptual questions.
+            </p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono text-purple-300 font-semibold">Concept Innovation</span>
+        </div>
+
+        <div class="spotlight-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3.5 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">Collaborative Activities</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Active participant in college academic sessions, technical peer forums, and group coursework.
+            </p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono text-emerald-300 font-semibold">Team Collaboration</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT & CONNECT HUB SECTION (Stylish Social Buttons & Interactive Form) -->
+    <section id="contact" class="scroll-mt-28 space-y-8 reveal">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"></div>
+        <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-400 font-mono">Connect With Me</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Direct Contact Information & Social Buttons -->
+        <div class="lg:col-span-5 space-y-6">
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Let's build something impactful.
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I am always eager to discuss engineering opportunities, student internships, AI concepts, or cybersecurity collaborations. Feel free to connect directly!
+          </p>
+
+          <div class="space-y-4">
+            
+            <!-- Location Card -->
+            <div class="spotlight-card p-4 flex items-start gap-3.5">
+              <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-[11px] text-slate-400 uppercase tracking-wider font-mono">Location</span>
+                <p class="text-sm font-semibold text-white mt-0.5">Shirpur, Maharashtra, India</p>
+                <p class="text-xs text-slate-400">R.C. Patel Institute of Technology</p>
+              </div>
+            </div>
+
+            <!-- Email Card with Copy Button -->
+            <div class="spotlight-card p-4 flex items-start justify-between gap-3">
+              <div class="flex items-start gap-3.5">
+                <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] text-slate-400 uppercase tracking-wider font-mono">Direct Email</span>
+                  <p class="text-sm font-semibold text-white mt-0.5 break-all" id="email-address">mrunali.patil@example.com</p>
+                  <p class="text-[11px] text-slate-400">Click button to copy address</p>
+                </div>
+              </div>
+              <button onclick="copyEmail()" class="px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-medium transition-colors flex items-center gap-1.5 shrink-0 border border-white/10 hover:border-indigo-500/40" id="copy-btn">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Stylish Social Media Buttons -->
+            <div class="spotlight-card p-5 space-y-3">
+              <span class="text-[11px] text-slate-400 uppercase tracking-wider font-mono block">Professional Channels</span>
+              <div class="grid grid-cols-2 gap-3">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn p-3 rounded-xl flex items-center gap-2.5 text-xs font-semibold text-slate-200 group">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-white">LinkedIn</p>
+                    <p class="text-[10px] text-slate-400">Connect</p>
+                  </div>
+                </a>
+
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn p-3 rounded-xl flex items-center gap-2.5 text-xs font-semibold text-slate-200 group">
+                  <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500/20 transition-colors">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-white">GitHub</p>
+                    <p class="text-[10px] text-slate-400">Repositories</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Interactive Message Form with Glowing Focus -->
+        <div class="lg:col-span-7 spotlight-card p-6 sm:p-9 relative">
+          <h4 class="text-xl font-bold text-white mb-1.5">Send a Direct Message</h4>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6">Have an internship opportunity, collaboration idea, or question? Send a note below.</p>
+
+          <form id="contact-form" class="space-y-4" onsubmit="handleContactSubmit(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-medium text-slate-300 mb-1.5">Your Name *</label>
+                <input type="text" id="name" required placeholder="e.g. Alex Sharma" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 placeholder-slate-500 text-sm outline-none transition-all shadow-inner" />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Email Address *</label>
+                <input type="email" id="email" required placeholder="alex@example.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 placeholder-slate-500 text-sm outline-none transition-all shadow-inner" />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
+              <input type="text" id="subject" placeholder="Internship Opportunity / Project Inquiry" class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 placeholder-slate-500 text-sm outline-none transition-all shadow-inner" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-medium text-slate-300 mb-1.5">Message *</label>
+              <textarea id="message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 placeholder-slate-500 text-sm outline-none transition-all resize-none shadow-inner"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="glow-btn-primary btn-shimmer w-full sm:w-auto px-6 py-3 rounded-xl text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2 group">
+              <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+
+          <!-- Form Success Banner -->
+          <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+            <div>
+              <p class="font-semibold">Message dispatched successfully!</p>
+              <p class="text-xs text-emerald-400/80">Thank you for getting in touch. Mrunali will get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-slate-950/90 backdrop-blur-xl py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white">Mrunali Patil</span>
+        <span>•</span>
+        <span>AI & Data Science Engineering</span>
+        <span>•</span>
+        <span>RCPIT Shirpur</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-indigo-400 transition-colors flex items-center gap-1">
+          <span>Back to Top</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
+        <span>•</span>
+        <span class="text-slate-500 font-mono">Designed for Excellence</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME SNAPSHOT MODAL (Printable & Downloadable) -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden my-8">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="file-text" class="w-5 h-5 text-indigo-400"></i>
+          <h3 class="text-base sm:text-lg font-bold text-white">Academic Resume Snapshot</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="downloadResumePDF()" class="glow-btn-resume px-3 py-1.5 rounded-lg text-xs font-semibold text-white flex items-center gap-1.5 transition-all shadow-sm" title="Download or Print as PDF">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Download / Print PDF</span>
+          </button>
+          <button onclick="closeResumeModal()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" title="Close Modal">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Printable Resume Content) -->
+      <div class="p-6 sm:p-8 space-y-6 text-slate-200 max-h-[75vh] overflow-y-auto print:max-h-none print:overflow-visible">
+        
+        <!-- Header -->
+        <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row items-center sm:items-start gap-4">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-slate-700 shadow-md shrink-0">
+            <img src="images/mrunali-patil.jpg" alt="Mrunali Patil" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="text-center sm:text-left">
+            <h2 class="text-2xl font-extrabold text-white tracking-wide">MRUNALI PATIL</h2>
+            <p class="text-indigo-400 font-medium text-sm mt-0.5">AI & Data Science Engineering Student | Shirpur, Maharashtra</p>
+            <p class="text-xs text-slate-400 mt-1">R.C. Patel Institute of Technology, Shirpur</p>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="space-y-1.5">
+          <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Profile</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Motivated and hardworking Artificial Intelligence & Data Science engineering student with a foundation in C, Python, and Java. Interested in cybersecurity and AI-based applications, with a focus on learning technical skills and solving programming problems.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-3">
+          <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Education</h4>
+          
+          <div class="text-xs sm:text-sm space-y-1">
+            <div class="flex justify-between font-semibold text-white">
+              <span>Bachelor of Engineering – Artificial Intelligence & Data Science</span>
+              <span class="text-indigo-300">Pursuing 2nd Year</span>
+            </div>
+            <div class="text-slate-400">R.C. Patel Institute of Technology, Shirpur</div>
+            <div class="text-xs text-emerald-400 font-mono">First Year Completed | FY CGPA: 6.50</div>
+          </div>
+
+          <div class="text-xs sm:text-sm space-y-1 pt-1">
+            <div class="flex justify-between font-semibold text-white">
+              <span>Secondary School Certificate (10th)</span>
+              <span class="text-cyan-300 font-mono">92.80% Distinction</span>
+            </div>
+            <div class="text-slate-400">R.C. Patel Junior College, Shirpur</div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Technical Skills</h4>
+          <ul class="text-xs sm:text-sm space-y-1 text-slate-300 list-disc list-inside">
+            <li><strong class="text-white">Programming Languages:</strong> C, Python, Java</li>
+            <li><strong class="text-white">Cybersecurity:</strong> Basic cybersecurity concepts</li>
+            <li><strong class="text-white">AI:</strong> Basic AI concepts and AI-based applications</li>
+            <li><strong class="text-white">Problem Solving:</strong> Programming and logical problem solving</li>
+          </ul>
+        </div>
+
+        <!-- Projects & Learning -->
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Projects & Learning</h4>
+          <div class="text-xs sm:text-sm space-y-2 text-slate-300">
+            <div>
+              <span class="font-bold text-white">AI Study Buddy:</span> Working on an AI-based study assistant concept designed to help students with learning and study support.
+            </div>
+            <div>
+              <span class="font-bold text-white">C Programming Practice:</span> Practiced conditions, loops, arrays, functions, and programming problem solving.
+            </div>
+            <div>
+              <span class="font-bold text-white">Python Programming Practice:</span> Learning Python basics, input/output, conditions, loops, and problem solving.
+            </div>
+            <div>
+              <span class="font-bold text-white">Java Programming Practice:</span> Learning Java fundamentals and object-oriented programming concepts.
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements & Activities -->
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Achievements & Activities</h4>
+          <ul class="text-xs sm:text-sm space-y-1 text-slate-300 list-disc list-inside">
+            <li>Successfully completed First Year of Engineering with an FY CGPA of 6.50.</li>
+            <li>Actively developing programming, AI, and cybersecurity skills.</li>
+            <li>Working on an AI Study Buddy project/concept.</li>
+            <li>Participated in academic and group activities.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3.5 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
+        <span class="text-xs text-slate-400">R.C. Patel Institute of Technology, Shirpur</span>
+        <button onclick="closeResumeModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl text-xs sm:text-sm text-white flex items-center gap-2.5 transition-all">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400" id="toast-icon"></i>
+    <span id="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <!-- Script File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

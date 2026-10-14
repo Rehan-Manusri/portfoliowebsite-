@@ -1,4 +1,4 @@
-# 🌟 Mrunali Patil - Personal Portfolio Website
+# 🌟Rehan Mansuri - Personal Portfolio Website
 
 An ultra-premium, modern, and interactive developer portfolio website built for **Mrunali Patil** (Artificial Intelligence & Data Science Engineering Student at R.C. Patel Institute of Technology, Shirpur).
 
